@@ -12,47 +12,63 @@ import java.util.Scanner;
  */
 public class DaysInMonth {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
+    
+  public static void main(String[] strings) {
+
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Enter the year: ");
+        System.out.println("Enter the year: ");// Ask User for year
         int year = input.nextInt();
-        for (int month = 1; month<12 ; month ++)
-        {
-        switch(month)
-        {
+        System.out.println("Enter the month (1-12): ");//Ask User for month
+        int month = input.nextInt();
+
+        switch (month) {
+            //All user inputs number equal to the case for 30 days
             case 4:
+                System.out.println("April has 30 days");
+                break;
             case 6:
-            case 8:
-            case 10:
-            case 12:
-                System.out.println("30 days");
+                System.out.println("June has 30 days");
                 break;
-            case 1:
-            case 3:
-            case 5:
-            case 7:
             case 9:
+                System.out.println("September has 30 days");
+                break;
             case 11:
-                System.out.println("31 days");
+                System.out.println("November has 30 days");
                 break;
+            //All user inputs number equal to the case for 31 days
+            case 1:
+                System.out.println("January has 31 days");
+                break;
+            case 3:
+                System.out.println("March has 31 days");
+                break;
+            case 5:
+                System.out.println("May has 31 days");
+                break;
+            case 7:
+                System.out.println("July has 31 days");
+                break;
+            case 8:
+                System.out.println("August has 31 days");
+                break;
+            case 10:
+                System.out.println("October has 31 days");
+                break;
+            case 12:
+                System.out.println("December has 31 days");
+                break;
+            //month of february for each 4 years with the exection 
             case 2:
-                if (year % 4==0){
-                    System.out.println("28 days");
-                }
-                else
-                {
-                    System.out.println("29 days because it is a leap year ");
+                if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+                    System.out.println("February has 29 days in year " + year);
+                } else {
+                    System.out.println("February has 28 days in year " + year);
                 }
                 break;
         }
-        System.out.printf("Number of day in each month for this year are %s\n" + month);
-        }
-        
-    }
-    
+  }
 }
+
+    
+
