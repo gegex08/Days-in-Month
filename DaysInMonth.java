@@ -66,6 +66,8 @@ public class DaysInMonth {
                     System.out.println("February has 28 days in year " + year);
                 }
                 break;
+            default:
+                System.out.println("Not a valid Month");
         }
   }
 }
